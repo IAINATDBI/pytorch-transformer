@@ -179,6 +179,7 @@ def train_model(config):
     # Define the device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
+    wandb.init()
 
     # Make sure the weights folder exists
     Path(config['model_folder']).mkdir(parents=True, exist_ok=True)
